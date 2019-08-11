@@ -48,7 +48,18 @@ class Search extends Component {
     </div>
     {
       this.state.searchResults
-      ? <p>results in console</p>
+      ?
+
+      this.state.searchResults.map(result => (
+        <>
+          <img
+            src={result.img[0].url}
+            height="250"
+            width="250"
+          />
+        </>
+      ))
+
       :
       <>
 
