@@ -3,7 +3,7 @@ import './App.css';
 import Main from './components/Main'
 import Console from './components/Console'
 
-
+let baseURL = `http://localhost:3000`
 
 class App extends Component {
 
@@ -14,6 +14,7 @@ class App extends Component {
       <div className="maincontainer">
         <div className="main">
           <Main
+            baseURL={baseURL}
             className="main"
            />
         </div>

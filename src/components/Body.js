@@ -1,35 +1,46 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 import Table from './Table'
 import Playlisthead from './Playlisthead'
+import Search from './Search'
+import Show from './Show'
 
 class Body extends Component {
   state = {
-    currentSong: ''
+
   }
 
-  displayInfo = (song) => {
-    this.setState({
-      currentSong: song
-    })
-  }
+
 
   render() {
     return(
-      <>
-      <div className="playlisthead">
-        <Playlisthead
-          currentSong={this.state.currentSong}
-         />
-      </div>
-      <div className="playlist">
-        <Table
-          songs={this.props.songs}
-          displayInfo={this.displayInfo}
-        />
-      </div>
+
+      <Router>
+      <Search
+        baseURL={this.props.baseURL}
+       />
+        <div className="showpage">
+        <Route path="/results" exact
+          component={Show} />
+        </div>
+
+      </Router>
 
 
-      </>
+      // <div className="playlisthead">
+      //   <Playlisthead
+      //
+      //    />
+      // </div>
+      // <div className="playlist">
+      //   <Table
+      //
+      //   />
+      // </div>
+
+
+
     )
   }
 }

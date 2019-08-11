@@ -3,22 +3,11 @@ import Sidebar from './Sidebar'
 import Body from './Body'
 
 class Main extends Component {
-  state = {
-    songs: ''
-  }
 
-  componentDidMount() {
-    this.getSongs()
-  }
 
-  getSongs = () => {
-    fetch(`http://localhost:3000/songs`)
-      .then(res => res.json())
-      .then(json => this.setState({
-        songs: json
-        }))
-      .catch(err => console.log(err))
-  }
+
+
+
   render(){
     return(
       <>
@@ -27,7 +16,7 @@ class Main extends Component {
       </div>
       <div className="body">
         <Body
-          songs={this.state.songs}
+          baseURL = {this.props.baseURL}
          />
       </div>
       </>
