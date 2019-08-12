@@ -7,8 +7,15 @@ class Search extends Component {
   }
 
   handleChange = (event) => {
+    event.target.value
+    ?
     this.setState({
       [event.target.id]: event.target.value
+    })
+    :
+    this.setState({
+      [event.target.id]: event.target.value,
+      searchResults: ''
     })
   }
 
@@ -19,12 +26,11 @@ class Search extends Component {
     fetch(this.props.baseURL + '/search/' + this.state.search)
     .then(res => res.json())
     .then(json => this.setState({
-      search: '',
       searchResults: json
     }))
     .catch(err=> console.log(err))
-
   }
+
 
 
   render() {

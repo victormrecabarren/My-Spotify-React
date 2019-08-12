@@ -17,22 +17,23 @@ class Body extends Component {
     return(
 
       <Router>
-        <div className="searchpage">
-          <Route
-            path="/"
-            exact
-            render={(routeProps) => (
-              <Search
-              {...routeProps}
-              baseURL={this.props.baseURL}
-                />
-              )}
-            />
-        </div>
+      <div className="searchpage">
+        <Route
+          path="/"
+          exact
+          render={(routeProps) => (
+            <Search
+            {...routeProps}
+            baseURL={this.props.baseURL}
+              />
+            )}
+          />
+      </div>
         <div className="showpage">
-          <Route path="/results" exact
-            component={Show} />
+        <Route path="/results" exact
+          component={Show} />
         </div>
+
       </Router>
 
 
