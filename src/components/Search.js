@@ -64,11 +64,15 @@ class Search extends Component {
     {
       this.state.searchResults
       ?
-      <SearchResults
-        searchResults={this.state.searchResults}
-      />
+      <div className="searchResultsComponent">
+        <SearchResults
+          searchResults={this.state.searchResults}
+        />
+      </div>
       :
-      <SearchNoResults />
+      <div className="searchNoResultsComponent">
+        <SearchNoResults />
+      </div>
     }
 
 

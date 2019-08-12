@@ -41,6 +41,7 @@
   background-image: linear-gradient(rgba(60, 60, 60, 1), rgba(30, 30, 30, 1));
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .playlisthead {
@@ -109,17 +110,61 @@ table {
   color: black;
 }
 #searchForm {
-  position: absolute
+  position: absolute;
 }
 
 .searchbar {
   min-height: 40px;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background-color: black;
 }
 
-.searchResults {
-
-}
 
 .searchGlass {
   color: rgba(250, 250, 250, 1)
+}
+
+.searchResultsComponent {
+  display: flex;
+  flex-direction: column;
+}
+
+.topResult {
+  background-image: linear-gradient(rgba(60, 60, 60, 1), rgba(30, 30, 30, 1));
+  padding: 50px 0 0 0;
+  padding-left: 30px;
+  padding-bottom: 50px;
+}
+.topResult > div> img {
+  height: 155px;
+  width: 155px;
+}
+.topResult > div {
+  width: 150px;
+}
+.topResult > div > h3 {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bolder;
+  padding-bottom: 10px;
+}
+.resultTitle {
+  padding-top: 10px;
+  font-size: .9em;
+  font-weight: bolder;
+}
+.resultSubline, .resultType {
+  color: gray;
+  font-size: .8em;
+}
+
+.resultSubline {
+  font-weight: bolder
+}
+.resultType {
+  font-size: .7em;
+  font-weight: normal;
+  letter-spacing: 2px
 }
