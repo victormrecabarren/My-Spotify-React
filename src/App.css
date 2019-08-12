@@ -3,8 +3,10 @@
   background: gray;
   height: 100vh;
   width: 100vw;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 900;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 .maincontainer {
@@ -75,12 +77,48 @@ table {
   flex-direction: column;
 }
 
+#search {
+  color: black;
+  font-size: 0.8em;
+  width: 175px;
+  height: 22px;
+  text-indent: 22px;
+  border-radius: 40px;
+  border-style: none;
+}
+#search:focus {
+  outline: none
+}
+
+#search::-webkit-search-cancel-button{
+    position: relative;
+    right: 2px;
+    
+}
+
+::placeholder {
+  color: black;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+}
+
+#magnifyingGlass {
+  position: relative;
+  top: 0px;
+  left: 20px;
+  font-size: 15px;
+  color: black;
+}
+#searchForm {
+  position: absolute
+}
+
 .searchbar {
   min-height: 40px;
 }
 
 .searchResults {
-  
+
 }
 
 .searchGlass {
