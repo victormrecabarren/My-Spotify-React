@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TopResult from './TopResult'
 
 class SearchResults extends Component {
   render() {
@@ -6,22 +7,9 @@ class SearchResults extends Component {
     return(
       <>
       <div className="topResult">
-        <div>
-        <h3>Top Result</h3>
-        <img
-          src={topResult.img[0].url}
-          alt={topResult.name}
+        <TopResult
+          topResult={topResult}
         />
-        <h5 className="resultTitle">
-          {topResult.name}
-        </h5>
-        <h6 className="resultSubline">
-          {topResult.artist}
-        </h6>
-        <h6 className="resultType">
-          ALBUM
-        </h6>
-        </div>
       </div>
 
       {
