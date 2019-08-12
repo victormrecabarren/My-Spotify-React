@@ -63,6 +63,7 @@ class Search extends Component {
             src={result.img[0].url}
             height="250"
             width="250"
+            alt={result.name}
           />
         </>
       ))
