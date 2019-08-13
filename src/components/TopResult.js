@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 class TopResult extends Component {
   render() {
     return(
+    <>
       <div>
       <h3>Top Result</h3>
       <img
@@ -12,13 +13,20 @@ class TopResult extends Component {
       <h5 className="resultTitle">
         {this.props.topResult.name}
       </h5>
-      <h6 className="resultSubline">
-        {this.props.topResult.artist}
-      </h6>
+      {
+        this.props.topResult.type!=="artist"
+        ?
+        <h6 className="resultSubline">
+          {this.props.topResult.artist}
+        </h6>
+        : null
+      }
+
       <h6 className="resultType">
-        ALBUM
+        {this.props.topResult.type.toUpperCase()}
       </h6>
       </div>
+    </>
     )
   }
 }

@@ -1,19 +1,38 @@
 import React, { Component } from 'react'
 import TopResult from './TopResult'
+import AlbumResults from './AlbumResults'
+import ArtistResults from './ArtistResults'
+import TrackResults from './TrackResults'
 
 class SearchResults extends Component {
   render() {
-    const topResult = this.props.searchResults[0]
+    const { topResult, albums, artists, tracks } = this.props.searchResults
     return(
       <>
       <div className="topResult">
         <TopResult
-          topResult={topResult}
+          topResult={topResult[0]}
         />
       </div>
 
-      {
-      this.props.searchResults.filter((result,i)=>i!=0).map(result => (
+      <div>
+        <AlbumResults
+          albums={albums}
+         />
+      </div>
+      <div>
+        <ArtistResults
+          artists={artists}
+        />
+      </div>
+      <div>
+        <TrackResults
+          tracks={tracks}
+         />
+      </div>
+
+      {/* {
+      this.props.searchResults.map(result => (
         <>
           <img
             src={result.img[0].url}
@@ -23,7 +42,7 @@ class SearchResults extends Component {
           />
         </>
       ))
-    }
+    } */}
 
     </>
     )
