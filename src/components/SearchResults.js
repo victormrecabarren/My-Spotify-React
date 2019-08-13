@@ -14,22 +14,35 @@ class SearchResults extends Component {
           topResult={topResult[0]}
         />
       </div>
-
-      <div>
-        <AlbumResults
-          albums={albums}
-         />
-      </div>
-      <div>
+      {
+        albums
+        ? <div className="categoryResults">
+          <AlbumResults
+            albums={albums}
+           />
+         </div>
+        : null
+      }
+      {
+        artists
+      ? <div className="categoryResults">
         <ArtistResults
           artists={artists}
         />
       </div>
-      <div>
-        <TrackResults
-          tracks={tracks}
-         />
-      </div>
+      : null
+      }
+      {
+        tracks
+      ? <div className="categoryResults">
+          <TrackResults
+            tracks={tracks}
+           />
+        </div>
+      : null
+      }
+
+
 
       {/* {
       this.props.searchResults.map(result => (

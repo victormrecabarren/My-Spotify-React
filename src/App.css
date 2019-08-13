@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  padding-bottom: 100px;
 }
 
 .playlisthead {
@@ -129,6 +130,7 @@ table {
 .searchResultsComponent {
   display: flex;
   flex-direction: column;
+  background-color: rgba(30, 30, 30, 1)
 }
 
 .topResult {
@@ -168,3 +170,75 @@ table {
   font-weight: normal;
   letter-spacing: 2px
 }
+
+.categoryResults {
+  display: flex;
+  flex-direction: column;
+  margin: 35px 35px 35px 35px;
+}
+
+
+.categoryResultsHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.categoryResultsHeader > h3 {
+  font-size: 1.1em;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  margin: 0
+}
+
+.seeAll {
+  color: gray;
+  font-size: .7em;
+  font-weight: normal;
+  letter-spacing: 2px
+}
+
+.categoryImage {
+  height: 65px;
+  width: 65px;
+}
+
+hr {
+  border-top: rgba(200, 200, 200, 0.1) 1px solid;
+  border-width: 0.1em;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.categoryResultsBody {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 200px
+}
+
+
+.categoryResultContainer {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0 0 24px 0
+}
+
+.resultsDescription {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+/* .resultsDescription > h5 {
+  font-size: 0.9em;
+  font-weight: bolder;
+}
+
+.resultsDescription > h6 {
+  font-size: 0.9em;
+  color: gray
+} */
