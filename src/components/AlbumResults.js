@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 class AlbumResults extends Component {
   render() {
@@ -13,16 +14,22 @@ class AlbumResults extends Component {
         <div className="categoryResultsBody">
         {
           albums.splice(0,4).map((album, i) => (
-            <div
+            // <Link
+            //   to='/show'
+            //   >
+            <Link
+              to="/show"
               key={`${i} album`}
-              id={album.id}
+              id={album.album_id}
               className="categoryResultContainer"
+              onClick={() => {
+                this.props.updateShowInfo(album.album_id)
+              }}
               >
               <img
                 src={album.img[0].url}
                 alt={album.name}
                 className="categoryImage"
-
               />
               <div className="resultsDescription">
                 <h5 className="resultTitle">
@@ -33,9 +40,8 @@ class AlbumResults extends Component {
                 </h6>
               </div>
 
-            </div>
+            </Link>
           ))
-
         }
       </div>
       </>

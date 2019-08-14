@@ -9,6 +9,17 @@
   /* font-family: 'Montserrat', sans-serif; */
 }
 
+a {
+ text-decoration: none;
+ color: white;
+}
+
+a:hover {
+ cursor: pointer;
+ text-decoration: underline;
+ color: white;
+}
+
 .maincontainer {
   display: flex;
   flex-direction: column;
@@ -67,6 +78,7 @@ table {
 }
 
 .table-dark thead th {
+  z-index: 100;
   position: sticky;
   top: 0;
   background-color: rgba(30, 30, 30, 1);
@@ -140,10 +152,38 @@ table {
   padding-left: 30px;
   padding-bottom: 50px;
 }
+
+.topResultContainer {
+  position:relative
+}
+
 .topResultImg {
   height: 155px;
   width: 155px;
 }
+
+.topResultImg:hover {
+  filter: brightness(50%);
+}
+
+.topResultsContainer > div {
+  position: absolute;
+}
+
+.icon-play {
+  z-index: -1;
+  border: 2px white solid;
+  border-radius: 50%;
+  margin: 30%;
+  margin-top: -135px;
+  position: relative;
+  background-color: rgba(20, 20, 20, .5)
+}
+.icon-play:hover {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+
 .topResult > div {
   width: 150px;
 }
@@ -199,6 +239,11 @@ table {
   font-weight: normal;
   letter-spacing: 2px
 }
+.seeAll:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: white;
+}
 
 .categoryImage {
   height: 65px;
@@ -230,7 +275,8 @@ hr {
 
 .categoryResultContainer:hover {
   background-color: rgba(40, 40, 40, 1);
-  cursor: pointer
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .resultsDescription {
@@ -251,16 +297,7 @@ hr {
   top: 24px;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
 
-a:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  color: white;
-}
 
 .link:hover {
   cursor: pointer;

@@ -19,7 +19,9 @@ class ArtistResults extends Component {
               className="categoryResultContainer"
               >
               <img
-                src={artist.img[0].url}
+                src={artist.img[0]
+                ? artist.img[0].url
+                : 'https://i.imgur.com/TEfaeVF.png' }
                 alt={artist.name}
                 className="categoryImage artistImage"
 
