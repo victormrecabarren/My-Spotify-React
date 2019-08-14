@@ -26,7 +26,7 @@ class OptionsCard extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    fetch(`${this.props.baseURL}/playlists`, {
+    fetch(this.props.baseURL + '/playlists', {
       method: 'POST',
       body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
       headers: {
