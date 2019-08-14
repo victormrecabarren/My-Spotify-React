@@ -3,7 +3,9 @@ import './App.css';
 import Main from './components/Main'
 import Console from './components/Console'
 
-let baseURL = `http://localhost:3000`
+import { baseURL } from './constants'
+
+
 
 class App extends Component {
 
