@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as HashRouter, Route } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 import Search from './Search'
