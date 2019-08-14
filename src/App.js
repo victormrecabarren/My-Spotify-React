@@ -11,6 +11,7 @@ class App extends Component {
 
 
   render(){
+    console.log(baseURL);
     return (
       <>
       <div className="maincontainer">
