@@ -8,13 +8,16 @@ import Show from './Show'
 
 class Body extends Component {
   state = {
-    show_info: ''
+    showInfo: ''
   }
 
-  updateShowInfo = (info) => {
-    this.setState({
-      show_info: info
-    })
+  updateShowInfo = (info, type) => {
+    fetch(`${this.props.baseURL}/${type}s/${info}`)
+      .then(res => res.json())
+      .then(json => this.setState({
+        showInfo: json
+      }))
+      .catch(err=>console.log(err))
   }
 
 
@@ -42,7 +45,7 @@ class Body extends Component {
           render={(routeProps) => (
             <Show
               {...routeProps}
-              showInfo={this.state.show_info}
+              showInfo={this.state.showInfo}
              />
            )}
           />

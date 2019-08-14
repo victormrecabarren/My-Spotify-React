@@ -23,7 +23,7 @@ class AlbumResults extends Component {
               id={album.album_id}
               className="categoryResultContainer"
               onClick={() => {
-                this.props.updateShowInfo(album.album_id)
+                this.props.updateShowInfo(album.album_id, "album")
               }}
               >
               <img

@@ -41,7 +41,7 @@ class TopResult extends Component {
             this.hoverPlay(false)
           }}
           onClick={() => {
-            this.props.updateShowInfo(this.props.topResult.artist_id)
+            this.props.updateShowInfo(this.props.topResult.artist_id, "artist")
           }}
           >
           <img
@@ -69,7 +69,7 @@ class TopResult extends Component {
             this.hoverPlay(false)
           }}
           onClick={() => {
-            this.props.updateShowInfo(this.props.topResult.album_id)
+            this.props.updateShowInfo(this.props.topResult.album_id, "album")
           }}
           >
           <img
@@ -98,7 +98,7 @@ class TopResult extends Component {
           style={centerAlign}
           className="resultTitle link"
           onClick={() => {
-            this.props.updateShowInfo(this.props.topResult.artist_id)
+            this.props.updateShowInfo(this.props.topResult.artist_id, "artist")
           }}
           >
           {this.props.topResult.name}
@@ -111,7 +111,7 @@ class TopResult extends Component {
         <h5
           className="resultTitle link"
           onClick={() => {
-            this.props.updateShowInfo(this.props.topResult.album_id)
+            this.props.updateShowInfo(this.props.topResult.album_id, "album")
           }}
           >
           {this.props.topResult.name}

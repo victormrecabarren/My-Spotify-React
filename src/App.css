@@ -297,18 +297,13 @@ hr {
 }
 
 
-
 .link:hover {
   cursor: pointer;
   text-decoration: underline;
   color: inherit
 }
-/* .resultsDescription > h5 {
-  font-size: 0.9em;
-  font-weight: bolder;
-}
 
-.resultsDescription > h6 {
-  font-size: 0.9em;
-  color: gray
-} */
+.showPage {
+  display: flex;
+  flex-direction: column;
+}
