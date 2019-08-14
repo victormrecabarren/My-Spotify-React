@@ -8,30 +8,44 @@ import Show from './Show'
 
 class Body extends Component {
   state = {
-
+    show_info: ''
   }
 
+  updateShowInfo = (info) => {
+    this.setState({
+      show_info: info
+    })
+  }
 
 
   render() {
     return(
 
       <Router>
-      <div className="searchpage">
+        <div className="searchpage">
+          <Route
+            path="/"
+            exact
+            render={(routeProps) => (
+              <Search
+              {...routeProps}
+              baseURL={this.props.baseURL}
+              updateShowInfo={this.updateShowInfo}
+                />
+              )}
+            />
+        </div>
+        <div className="showpage">
         <Route
-          path="/"
+          path="/show"
           exact
           render={(routeProps) => (
-            <Search
-            {...routeProps}
-            baseURL={this.props.baseURL}
-              />
-            )}
+            <Show
+              {...routeProps}
+              showInfo={this.state.show_info}
+             />
+           )}
           />
-      </div>
-        <div className="showpage">
-        <Route path="/results" exact
-          component={Show} />
         </div>
 
       </Router>

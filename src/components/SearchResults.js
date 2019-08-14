@@ -12,6 +12,8 @@ class SearchResults extends Component {
       <div className="topResult">
         <TopResult
           topResult={topResult[0]}
+          updateShowInfo={this.props.updateShowInfo}
+          baseURL={this.props.baseURL}
         />
       </div>
       {
@@ -19,15 +21,19 @@ class SearchResults extends Component {
         ? <div className="categoryResults">
           <AlbumResults
             albums={albums}
+            updateShowInfo={this.props.updateShowInfo}
+            baseURL={this.props.baseURL}
            />
          </div>
         : null
       }
       {
-        artists
+        artists.length
       ? <div className="categoryResults">
         <ArtistResults
           artists={artists}
+          updateShowInfo={this.props.updateShowInfo}
+          baseURL={this.props.baseURL}
         />
       </div>
       : null
@@ -37,25 +43,12 @@ class SearchResults extends Component {
       ? <div className="categoryResults">
           <TrackResults
             tracks={tracks}
+            updateShowInfo={this.props.updateShowInfo}
+            baseURL={this.props.baseURL}
            />
         </div>
       : null
       }
-
-
-
-      {/* {
-      this.props.searchResults.map(result => (
-        <>
-          <img
-            src={result.img[0].url}
-            height="250"
-            width="250"
-            alt={result.name}
-          />
-        </>
-      ))
-    } */}
 
     </>
     )

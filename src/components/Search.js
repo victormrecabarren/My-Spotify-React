@@ -315,6 +315,8 @@ class Search extends Component {
       <div className="searchResultsComponent">
         <SearchResults
           searchResults={this.state.searchResults}
+          updateShowInfo={this.props.updateShowInfo}
+          baseURL = {this.props.baseURL}
         />
       </div>
       :

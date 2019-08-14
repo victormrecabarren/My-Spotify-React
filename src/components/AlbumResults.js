@@ -6,7 +6,7 @@ class AlbumResults extends Component {
     return(
       <>
       <div className="categoryResultsHeader">
-        <h3>Songs</h3>
+        <h3>Albums</h3>
         <span className="seeAll">SEE ALL</span>
       </div>
         <hr />
