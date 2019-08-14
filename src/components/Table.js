@@ -82,10 +82,11 @@ class Table extends Component {
                 {
                   this.state[track.name]=="clicked"
                   ?
-                  
+
                   <OptionsCard
                     showInfo={this.props.showInfo}
                     selected={track}
+                    baseURL={this.props.baseURL}
                   />
 
                   : null

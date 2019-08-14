@@ -18,6 +18,7 @@ class ShowAlbum extends Component {
         </div>
         <Table
           showInfo={this.props.showInfo}
+          baseURL={this.props.baseURL}
         />
       </>
 

@@ -8,6 +8,15 @@ class OptionsCard extends Component {
     playlistInput: ''
   }
 
+  componentDidMount = () => {
+    fetch(`${this.props.baseURL}/playlists`)
+    .then(res => res.json())
+    .then(playlists => this.setState({
+      playlists: playlists
+    }))
+    .catch(err => console.log(err))
+  }
+
   handleChange = (event) => {
     this.setState({
       [event.target.id]: event.target.value
@@ -16,15 +25,24 @@ class OptionsCard extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(this.props.selected);
-    this.setState({
-      creatingPlaylist: false,
-      playlists: [{
-        name: 'newplaylist1'
-      }, {
-        name: 'newplaytlist2'
-      }]
+
+    fetch(`${this.props.baseURL}/playlists`, {
+      method: 'POST',
+      body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+        }
+      })
+    .then(createdPlaylist => createdPlaylist.json())
+    .then(newPlayList => {
+      let playlistCopy = [...this.state.playlists, {name: newPlayList.playlist_name}]
+      this.setState({
+        playlists: playlistCopy
+      })
     })
+    .catch(err=>console.log(err))
+
   }
 
   handleHover = (bool) => {
@@ -110,7 +128,7 @@ class OptionsCard extends Component {
                       ?
                       <>
                       {this.state.playlists.map(playlist => (
-                        <div>{playlist.name}</div>
+                        <div>{playlist.playlist_name}</div>
                       ))}
                   </>
                     : null

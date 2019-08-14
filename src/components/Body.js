@@ -94,6 +94,7 @@ class Body extends Component {
             <ShowAlbum
               {...routeProps}
               showInfo={this.state.showInfo}
+              baseURL={this.props.baseURL}
              />
            )}
           />
