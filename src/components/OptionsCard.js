@@ -47,7 +47,7 @@ class OptionsCard extends Component {
 
   handleHover = (bool) => {
     this.setState({
-      addingToPlaylist: true
+      addingToPlaylist: bool
     })
   }
 
@@ -128,7 +128,7 @@ class OptionsCard extends Component {
                       ?
                       <>
                       {this.state.playlists.map(playlist => (
-                        <div>{playlist.name}</div>
+                        <div>{playlist.playlist_name}</div>
                       ))}
                   </>
                     : null
