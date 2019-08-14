@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as HashRouter, Route } from 'react-router-dom'
 
 
 import Search from './Search'
@@ -72,7 +72,7 @@ class Body extends Component {
         </form>
       </div>
 
-      <Router>
+      <HashRouter>
           <Route
             path="/"
             exact
@@ -108,7 +108,7 @@ class Body extends Component {
            )}
           />
 
-      </Router>
+      </HashRouter>
 
       </>
     )
