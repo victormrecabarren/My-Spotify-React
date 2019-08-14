@@ -28,7 +28,6 @@ class OptionsCard extends Component {
 
     fetch(`${this.props.baseURL}/playlists`, {
       method: 'POST',
-      mode: 'no-cors',
       body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
       headers: {
         'Accept': 'application/json, text/plain, */*',
