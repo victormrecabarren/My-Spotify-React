@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-// import Table from './Table'
-// import Playlisthead from './Playlisthead'
+
 import Search from './Search'
 import ShowAlbum from './ShowAlbum'
 
