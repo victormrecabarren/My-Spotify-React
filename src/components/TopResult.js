@@ -32,7 +32,7 @@ class TopResult extends Component {
         this.props.topResult.type==="artist"
         ?
         <Link
-          to='/show'
+          to='/showartist'
           className="topResultsContainer"
           onMouseEnter={() => {
             this.hoverPlay(true)
@@ -60,7 +60,7 @@ class TopResult extends Component {
         </Link>
         :
         <Link
-          to='/show'
+          to='/showalbum'
           className="topResultsContainer"
           onMouseEnter={() => {
             this.hoverPlay(true)
@@ -92,7 +92,7 @@ class TopResult extends Component {
         this.props.topResult.type==="artist"
         ?
         <Link
-          to='/show'
+          to='/showartist'
           >
         <h5
           style={centerAlign}
@@ -106,7 +106,7 @@ class TopResult extends Component {
       </Link>
         :
         <Link
-          to='/show'
+          to='/showalbum'
           >
         <h5
           className="resultTitle link"
@@ -122,7 +122,7 @@ class TopResult extends Component {
         this.props.topResult.type!=="artist"
         ?
         <Link
-          to='/show'
+          to='/showalbum'
           >
         <h6
           className="resultSubline link"

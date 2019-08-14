@@ -18,7 +18,7 @@ class AlbumResults extends Component {
             //   to='/show'
             //   >
             <Link
-              to="/show"
+              to="/showalbum"
               key={`${i} album`}
               id={album.album_id}
               className="categoryResultContainer"
