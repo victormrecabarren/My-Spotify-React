@@ -127,11 +127,13 @@ table {
 }
 
 .searchbar {
+  z-index: 1;
   min-height: 40px;
   padding: 10px;
   position: sticky;
   top: 0;
   background-color: black;
+  /* box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 1); */
 }
 
 
@@ -154,7 +156,7 @@ table {
 }
 
 .topResultContainer {
-  position:relative
+  /* position:relative */
 }
 
 .topResultImg {
@@ -166,9 +168,6 @@ table {
   filter: brightness(50%);
 }
 
-.topResultsContainer > div {
-  position: absolute;
-}
 
 .icon-play {
   z-index: -1;
