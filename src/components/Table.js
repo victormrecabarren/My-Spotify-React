@@ -87,6 +87,8 @@ class Table extends Component {
                     showInfo={this.props.showInfo}
                     selected={track}
                     baseURL={this.props.baseURL}
+                    playlists={this.props.playlists}
+                    updatePlaylists={this.props.updatePlaylists}
                   />
 
                   : null

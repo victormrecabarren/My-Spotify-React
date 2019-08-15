@@ -95,6 +95,8 @@ class Body extends Component {
               {...routeProps}
               showInfo={this.state.showInfo}
               baseURL={this.props.baseURL}
+              playlists={this.props.playlists}
+              updatePlaylists={this.props.updatePlaylists}
              />
            )}
           />

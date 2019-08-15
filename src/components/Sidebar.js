@@ -6,6 +6,14 @@ class Sidebar extends Component {
     <>
       <h4>
         Sidebar component!
+        {
+          this.props.playlists.length
+          ?
+          this.props.playlists.map(playlist => (
+            <p>{playlist.playlist_name}</p>
+          ))
+          : null
+        }
       </h4>
     </>
 

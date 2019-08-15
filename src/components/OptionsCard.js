@@ -3,19 +3,19 @@ import React, { Component } from 'react'
 class OptionsCard extends Component {
   state = {
     addingToPlaylist: '',
-    playlists: '',
+    // playlists: '',
     creatingPlaylist: false,
     playlistInput: ''
   }
 
-  componentDidMount = () => {
-    fetch(`${this.props.baseURL}/playlists`)
-    .then(res => res.json())
-    .then(playlists => this.setState({
-      playlists: playlists
-    }))
-    .catch(err => console.log(err))
-  }
+  // componentDidMount = () => {
+  //   fetch(`${this.props.baseURL}/playlists`)
+  //   .then(res => res.json())
+  //   .then(playlists => this.setState({
+  //     playlists: playlists
+  //   }))
+  //   .catch(err => console.log(err))
+  // }
 
   handleChange = (event) => {
     this.setState({
@@ -26,7 +26,7 @@ class OptionsCard extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    let newPlayListId = ''
+
 
     if (this.state.playlistInput) {
     fetch(this.props.baseURL + '/playlists', {
@@ -46,17 +46,18 @@ class OptionsCard extends Component {
       })
     .then(createdPlaylist => createdPlaylist.json())
     .then(newPlayList => {
-      this.newPlayListId = newPlayList.id
-      let playlistCopy = [...this.state.playlists, newPlayList]
+      let playlistCopy = [...this.props.playlists, newPlayList]
       this.setState({
         playlistInput: '',
-        playlists: playlistCopy,
+        // playlists: playlistCopy,
         creatingPlaylist: false,
       })
+      this.props.updatePlaylists(playlistCopy)
     })
     .catch(err=>console.log(err))
     }
   }
+
 
   handleHover = (bool) => {
     this.setState({
@@ -148,10 +149,10 @@ class OptionsCard extends Component {
                       New Playlist
                     </div>}
                     {
-                      this.state.playlists.length
+                      this.props.playlists.length
                       ?
                       <>
-                      {this.state.playlists.map(playlist => (
+                      {this.props.playlists.map(playlist => (
                         <div
                           onClick={() => {
                             this.addToExistingPlaylist()
