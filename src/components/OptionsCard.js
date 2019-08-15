@@ -126,7 +126,7 @@ class OptionsCard extends Component {
                       New Playlist
                     </div>}
                     {
-                      this.state.playlists
+                      this.state.playlists.length
                       ?
                       <>
                       {this.state.playlists.map(playlist => (
