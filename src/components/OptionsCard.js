@@ -124,7 +124,7 @@ class OptionsCard extends Component {
                         this.newPlaylist(this.props.selected)
                       }}>
                       New Playlist
-                    </div>}
+                    </div>
                     {
                       this.state.playlists
                       ?
@@ -132,6 +132,7 @@ class OptionsCard extends Component {
                       {this.state.playlists.map(playlist => (
                         <div>{playlist.playlist_name}</div>
                       ))}
+                  }
                   </>
                     : null
                   }
