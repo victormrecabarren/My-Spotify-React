@@ -26,7 +26,7 @@ class OptionsCard extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    newPlayListId = ''
+    let newPlayListId = ''
 
     fetch(this.props.baseURL + '/playlists', {
       method: 'POST',
@@ -45,7 +45,7 @@ class OptionsCard extends Component {
       })
     .then(createdPlaylist => createdPlaylist.json())
     .then(newPlayList => {
-      newPlayListId = newPlayList.id
+      this.newPlayListId = newPlayList.id
       let playlistCopy = [...this.state.playlists, newPlayList]
       this.setState({
         playlistInput: '',
@@ -156,7 +156,7 @@ class OptionsCard extends Component {
                       {this.state.playlists.map(playlist => (
                         <div
                           onClick={() => {
-                            addToExistingPlaylist()
+                            this.addToExistingPlaylist()
                           }}
                           >{playlist.playlist_name}</div>
                       ))}
