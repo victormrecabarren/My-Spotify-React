@@ -28,6 +28,7 @@ class OptionsCard extends Component {
 
     let newPlayListId = ''
 
+    if (this.state.playlistInput) {
     fetch(this.props.baseURL + '/playlists', {
       method: 'POST',
       body: JSON.stringify(
@@ -54,16 +55,7 @@ class OptionsCard extends Component {
       })
     })
     .catch(err=>console.log(err))
-
-    // fetch(this.props.baseURL + '/playlists/' + newPlayListId + '/tracks/' this.props.selected.id, {
-    //   method: 'POST',
-    //   body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
-    //   headers: {
-    //     'Accept': 'application/json, text/plain, */*',
-    //     'Content-Type': 'application/json'
-    //     }
-    //   })
-
+    }
   }
 
   handleHover = (bool) => {
@@ -127,7 +119,11 @@ class OptionsCard extends Component {
                   className="createPlaylistCard"
                   >
                     {this.state.creatingPlaylist?
-                      <div>
+                      <div
+                        onClick={() => {
+                          this.newPlaylist()
+                        }}
+                        >
                         <form
                           autoComplete="off"
                           onSubmit={this.handleSubmit}
