@@ -40,7 +40,7 @@ class OptionsCard extends Component {
       this.setState({
         playlistInput: '',
         playlists: playlistCopy,
-        addingToPlaylist: false,
+        creatingPlaylist: false,
       })
     })
     .catch(err=>console.log(err))
