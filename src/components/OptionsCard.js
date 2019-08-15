@@ -55,14 +55,14 @@ class OptionsCard extends Component {
     })
     .catch(err=>console.log(err))
 
-    fetch(this.props.baseURL + '/playlists/' + newPlayListId + '/tracks/' this.props.selected.id, {
-      method: 'POST',
-      body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-        }
-      })
+    // fetch(this.props.baseURL + '/playlists/' + newPlayListId + '/tracks/' this.props.selected.id, {
+    //   method: 'POST',
+    //   body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
+    //   headers: {
+    //     'Accept': 'application/json, text/plain, */*',
+    //     'Content-Type': 'application/json'
+    //     }
+    //   })
 
   }
 
