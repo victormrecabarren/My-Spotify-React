@@ -72,8 +72,25 @@ class OptionsCard extends Component {
     })
   }
 
-  addToExistingPlaylist = () => {
-      fetch(this.props.baseURL + '/')
+  addToExistingPlaylist = (playlistId) => {
+    this.props.selected.playlist_id = playlistId
+
+    this.props.selected.images = 'none'
+
+    fetch(this.props.baseURL + '/playlists/' + playlistId + '/tracks', {
+      method: 'POST',
+      body: JSON.stringify(
+        {track: this.props.selected
+      }),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+        }
+      })
+    .then(createdTrack => createdTrack.json())
+    .then(track => console.log(track))
+    .catch(err=>console.log(err))
+
   }
 
   render(){
@@ -155,7 +172,7 @@ class OptionsCard extends Component {
                       {this.props.playlists.map(playlist => (
                         <div
                           onClick={() => {
-                            this.addToExistingPlaylist()
+                            this.addToExistingPlaylist(playlist.id)
                           }}
                           >{playlist.playlist_name}</div>
                       ))}
