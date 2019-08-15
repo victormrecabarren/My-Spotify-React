@@ -36,7 +36,7 @@ class OptionsCard extends Component {
       })
     .then(createdPlaylist => createdPlaylist.json())
     .then(newPlayList => {
-      let playlistCopy = [...this.state.playlists, {name: newPlayList.playlist_name}]
+      let playlistCopy = [...this.state.playlists, {playlist_name: newPlayList.playlist_name}]
       this.setState({
         playlistInput: '',
         addingToPlaylist: false,
@@ -105,6 +105,7 @@ class OptionsCard extends Component {
                     {this.state.creatingPlaylist?
                       <div>
                         <form
+                          autoComplete="off"
                           onSubmit={this.handleSubmit}
                           className="searchForm"
                           >
