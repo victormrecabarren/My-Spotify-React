@@ -57,10 +57,10 @@ class Table extends Component {
               <>
               <tr
                 onMouseEnter={() => {
-                  this.handleHover(track.id, true)
+                  this.handleHover(track.spotify_id, true)
                 }}
                 onMouseLeave={() => {
-                  this.handleHover(track.id, false)
+                  this.handleHover(track.spotify_id, false)
                 }}
               >
                 <th
@@ -70,7 +70,7 @@ class Table extends Component {
                 <td
                 style={{textAlign:"right"}}
                 >
-                { this.state[track.id] ? <div
+                { this.state[track.spotify_id] ? <div
                     className="trackOptionsIcon"
                     onClick={() => {
                       this.displayOptionsCard(track.name)

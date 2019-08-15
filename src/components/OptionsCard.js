@@ -72,7 +72,7 @@ class OptionsCard extends Component {
   }
 
   addToExistingPlaylist = () => {
-    // fetch(this.props.baseURL + '/playlist')
+      fetch(this.props.baseURL + '/')
   }
 
   render(){
