@@ -72,9 +72,10 @@ class OptionsCard extends Component {
     })
   }
 
-  newPlaylist = (song) => {
+  newPlaylist = () => {
+
     this.setState({
-      creatingPlaylist: true
+      creatingPlaylist: !this.state.creatingPlaylist
     })
   }
 
@@ -146,7 +147,7 @@ class OptionsCard extends Component {
                       :
                       <div
                       onClick={() => {
-                        this.newPlaylist(this.props.selected)
+                        this.newPlaylist()
                       }}>
                       New Playlist
                     </div>}
