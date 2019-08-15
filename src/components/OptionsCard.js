@@ -133,6 +133,7 @@ class OptionsCard extends Component {
                           className="searchForm"
                           >
                           <input
+                            autoFocus
                             id="playlistInput"
                             type="text"
                             value={this.state.playlistInput}
