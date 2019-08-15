@@ -26,9 +26,18 @@ class OptionsCard extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
+    newPlayListId = ''
+
     fetch(this.props.baseURL + '/playlists', {
       method: 'POST',
-      body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
+      body: JSON.stringify(
+        {playlist:
+          {
+            playlist_name: this.state.playlistInput,
+            seed_track: this.props.selected,
+            seed_album: this.props.showInfo
+          }
+      }),
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
@@ -36,6 +45,7 @@ class OptionsCard extends Component {
       })
     .then(createdPlaylist => createdPlaylist.json())
     .then(newPlayList => {
+      newPlayListId = newPlayList.id
       let playlistCopy = [...this.state.playlists, newPlayList]
       this.setState({
         playlistInput: '',
@@ -44,6 +54,15 @@ class OptionsCard extends Component {
       })
     })
     .catch(err=>console.log(err))
+
+    fetch(this.props.baseURL + '/playlists/' + newPlayListId + '/tracks/' this.props.selected.id, {
+      method: 'POST',
+      body: JSON.stringify({playlist: {playlist_name: this.state.playlistInput}}),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+        }
+      })
 
   }
 
