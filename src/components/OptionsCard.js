@@ -36,7 +36,7 @@ class OptionsCard extends Component {
       })
     .then(createdPlaylist => createdPlaylist.json())
     .then(newPlayList => {
-      let playlistCopy = [...this.state.playlists, {playlist_name: newPlayList.playlist_name}]
+      let playlistCopy = [...this.state.playlists, newPlayList]
       this.setState({
         playlistInput: '',
         playlists: playlistCopy,
@@ -57,6 +57,10 @@ class OptionsCard extends Component {
     this.setState({
       creatingPlaylist: true
     })
+  }
+
+  addToExistingPlaylist = () => {
+    fetch(this.props.baseURL + '/playlist')
   }
 
   render(){
@@ -131,7 +135,11 @@ class OptionsCard extends Component {
                       ?
                       <>
                       {this.state.playlists.map(playlist => (
-                        <div>{playlist.playlist_name}</div>
+                        <div
+                          onClick={() => {
+                            addToExistingPlaylist()
+                          }}
+                          >{playlist.playlist_name}</div>
                       ))}
                   </>
                     : null
