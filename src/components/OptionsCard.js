@@ -39,7 +39,8 @@ class OptionsCard extends Component {
       let playlistCopy = [...this.state.playlists, {playlist_name: newPlayList.playlist_name}]
       this.setState({
         playlistInput: '',
-        playlists: playlistCopy
+        playlists: playlistCopy,
+        addingToPlaylist: false,
       })
     })
     .catch(err=>console.log(err))
