@@ -45,7 +45,9 @@ class TopResult extends Component {
           }}
           >
           <img
-            src={this.props.topResult.img[0].url}
+            src={this.props.topResult.img[0]
+            ?this.props.topResult.img[0].url
+            :'https://i.imgur.com/TEfaeVF.png'}
             alt={this.props.topResult.name}
             className="artistImage topResultImg link"
             style={this.state.imageStyle}

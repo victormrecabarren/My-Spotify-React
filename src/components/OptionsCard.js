@@ -87,8 +87,7 @@ class OptionsCard extends Component {
         'Content-Type': 'application/json'
         }
       })
-    .then(createdTrack => createdTrack.json())
-    .then(track => console.log(track))
+    .then(createdTrack => console.log(createdTrack))
     .catch(err=>console.log(err))
 
   }
