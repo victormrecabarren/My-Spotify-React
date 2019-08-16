@@ -538,7 +538,15 @@ hr {
 .sidebarHeader {
   border: red 1px solid;
   box-sizing: border-box;
-  margin-top: 50px;
+  margin: 50px 0;
+  height: 140px;
+}
+
+.sidebarOptions {
+  color: rgba(180, 180, 180, 1);
+  height: 20%;
+  margin: 10px 0;
+
 }
 
 

@@ -5,13 +5,22 @@ class SidebarHeader extends Component {
   render() {
     return(
     <>
-      <div>Home</div>
-      <Link to="/">
       <div
-        onClick={this.props.clearSearchBar}
-        >Browse</div>
-      </Link>
-      <div>Radio</div>
+        className="sidebarOptions"
+        >Home</div>
+      <div
+        className="sidebarOptions"
+        >
+        <Link
+          to="/">
+          <div
+            onClick={this.props.clearSearchBar}
+          > Browse</div>
+        </Link>
+      </div>
+      <div
+        className="sidebarOptions"
+        >Radio</div>
     </>
     )
   }
