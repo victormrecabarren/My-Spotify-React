@@ -29,7 +29,11 @@ class Main extends Component {
   }
 
   clearSearchBar = () => {
-    console.log('going to clear serach');
+    this.setState({
+      search: '',
+      redirect: true,
+      searchResults: '',
+    })
   }
 
 
@@ -63,7 +67,8 @@ class Main extends Component {
     fetch(`${this.props.baseURL}/${type}s/${info}`)
       .then(res => res.json())
       .then(json => this.setState({
-        showInfo: json
+        showInfo: json,
+        redirect: false,
       }))
       .catch(err=>console.log(err))
   }
