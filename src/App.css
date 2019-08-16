@@ -44,7 +44,11 @@ a:hover {
 .sidebar {
   min-width: 200px;
   background-color: rgba(15, 15, 15, 1);
+  display: flex;
+  flex-direction: column;
+  color: rgba(180, 180, 180, 1);
 }
+
 
 .body {
   width: 100%;
@@ -529,4 +533,17 @@ hr {
 .carrot {
   position: absolute;
   margin-left: -20px;
+}
+
+.sidebarHeader {
+  border: red 1px solid;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+
+
+.userLibraries {
+  border: red 1px solid;
+  box-sizing: border-box;
 }

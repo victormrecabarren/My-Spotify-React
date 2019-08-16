@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import ShowAlbumHeader from './ShowAlbumHeader'
 import Table from './Table'
 
+
 class ShowAlbum extends Component {
   render() {
     return(
       <>
+
       <div className="showpage">
       {
         this.props.showInfo

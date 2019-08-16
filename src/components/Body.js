@@ -1,61 +1,28 @@
 import React, { Component } from 'react';
-import { HashRouter } from 'react-router-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Redirect } from 'react-router';
 
 
 import Search from './Search'
 import ShowAlbum from './ShowAlbum'
 
 class Body extends Component {
-  state = {
-    search: '',
-    searchResults: '',
-    showInfo: '',
-  }
-
-  handleChange = (event) => {
-    event.target.value
-    ?
-    this.setState({
-      [event.target.id]: event.target.value
-    })
-    :
-    this.setState({
-      [event.target.id]: event.target.value,
-      searchResults: ''
-    })
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault()
-    console.log(this.state.search)
-
-    fetch(this.props.baseURL + '/search/' + this.state.search)
-    .then(res => res.json())
-    .then(json => this.setState({
-      searchResults: json
-    }))
-    .catch(err=> console.log(err))
-  }
-
-  updateShowInfo = (info, type) => {
-    fetch(`${this.props.baseURL}/${type}s/${info}`)
-      .then(res => res.json())
-      .then(json => this.setState({
-        showInfo: json
-      }))
-      .catch(err=>console.log(err))
-  }
-
-
   render() {
     return(
       <>
+      {
+        this.props.redirect
+        ?
+        <Redirect push to="/" />
+        :
+        null
+
+      }
       <div className="searchbar">
 
         <form
           autoComplete="off"
-          onSubmit={this.handleSubmit}
+          onSubmit={this.props.handleSubmit}
           className="searchForm"
           >
           <span id="magnifyingGlass">
@@ -66,14 +33,14 @@ class Body extends Component {
           <input
             id="search"
             type="search"
-            value={this.state.search}
-            onChange={this.handleChange}
+            value={this.props.search}
+            onChange={this.props.handleChange}
             placeholder="Search"
           />
         </form>
       </div>
 
-      <HashRouter>
+
           <Route
             path="/"
             exact
@@ -81,8 +48,8 @@ class Body extends Component {
               <Search
               {...routeProps}
               baseURL={this.props.baseURL}
-              updateShowInfo={this.updateShowInfo}
-              searchResults={this.state.searchResults}
+              updateShowInfo={this.props.updateShowInfo}
+              searchResults={this.props.searchResults}
 
                 />
               )}
@@ -93,10 +60,11 @@ class Body extends Component {
           render={(routeProps) => (
             <ShowAlbum
               {...routeProps}
-              showInfo={this.state.showInfo}
+              showInfo={this.props.showInfo}
               baseURL={this.props.baseURL}
               playlists={this.props.playlists}
               updatePlaylists={this.props.updatePlaylists}
+              redirect={this.props.redirect}
              />
            )}
           />
@@ -106,12 +74,12 @@ class Body extends Component {
           render={(routeProps) => (
             <ShowAlbum
               {...routeProps}
-              showInfo={this.state.showInfo}
+              showInfo={this.props.showInfo}
              />
            )}
           />
 
-      </HashRouter>
+
 
       </>
     )
