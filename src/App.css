@@ -27,18 +27,20 @@ a:hover {
 }
 
 .main {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex: 1;
 }
 
 .console {
   min-height: 70px;
+  height: 70px;
   width: 100%;
   background-color: rgba(40, 40, 40, 1);
-  position: absolute;
-  bottom: 0
+  /* position: absolute;
+  bottom: 0 */
 }
 
 .sidebar {
@@ -47,6 +49,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   color: rgba(180, 180, 180, 1);
+
 }
 
 
@@ -57,7 +60,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 }
 
 .playlisthead {
@@ -230,8 +233,8 @@ table {
 }
 
 .topResultImg {
-  height: 155px;
-  width: 155px;
+  height: 145px;
+  width: 145px;
 }
 
 .topResultImg:hover {
@@ -268,7 +271,7 @@ table {
   font-weight: bolder;
 }
 .resultSubline, .resultType {
-  color: gray;
+  color: rgba(180, 180, 180, 1);
   font-size: .8em;
 }
 
@@ -536,9 +539,8 @@ hr {
 }
 
 .sidebarHeader {
-  border: red 1px solid;
   box-sizing: border-box;
-  margin: 50px 0;
+  margin: 50px 0 20px;
   height: 140px;
 }
 
@@ -546,12 +548,46 @@ hr {
   color: rgba(180, 180, 180, 1);
   height: 20%;
   margin: 10px 0;
-
+  padding: 0 20px;
 }
 
-
-
 .userLibraries {
-  border: red 1px solid;
   box-sizing: border-box;
+  overflow-y: scroll;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+.libraryHeaderText {
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+
+.libraryLinks {
+  font-size: .9em;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.libraryLinks:hover {
+  color: white;
+}
+
+.playlistsHeader {
+  padding-top:25px;
+}
+
+.myPlaylists {
+  font-weight: 300;
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.sidebarFooter {
+  position: sticky;
+  align-self: flex-end;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color:rgba(230,230,230,0.1);
 }
