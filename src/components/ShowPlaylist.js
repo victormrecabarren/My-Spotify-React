@@ -8,7 +8,7 @@ class ShowPlaylist extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props.currentPlaylist.id);
+    console.log(this.props.currentPlaylist);
     fetch(this.props.baseURL + `/playlists/${this.props.currentPlaylist.id}`)
     .then(res => res.json())
     .then(playlist => this.setState({
@@ -20,12 +20,20 @@ class ShowPlaylist extends Component {
   render() {
     return(
       <>
-      <Playlisthead
+      {
+        this.state.playlist
+        ?
+      <>
+        <Playlisthead
         playlist={this.state.playlist}
-      />
-      <PlaylistBody
-        playlist={this.state.playlist}
-      />
+        />
+        <PlaylistBody
+          playlist={this.state.playlist}
+        />
+      </>
+        :
+        null
+      }
       </>
     )
   }

@@ -41,6 +41,9 @@ class UserLibraries extends Component {
             onClick={() => {
               this.props.viewPlaylist(playlist)
             }}
+            onMouseOver={() => {
+              console.log(playlist);
+            }}
             >{playlist.playlist_name}</Link>
         ))
         : null
