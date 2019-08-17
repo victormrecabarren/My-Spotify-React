@@ -91,11 +91,20 @@ class OptionsCard extends Component {
     .then(createdTrack => console.log(createdTrack))
     .catch(err=>console.log(err))
 
+
+    this.props.hideOptionsCard(this.props.selected.name)
+
+
   }
 
   render(){
     return(
-        <div className="optionsCard">
+        <div
+          className="optionsCard"
+          onMouseLeave={() => {
+            this.props.hideOptionsCard(this.props.selected.name)
+          }}
+          >
         <div>
           <p>
             Add to Queue

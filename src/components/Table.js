@@ -25,6 +25,12 @@ class Table extends Component {
     })
   }
 
+  hideOptionsCard = (id) => {
+    this.setState({
+      [id]: ''
+    })
+  }
+
 
 
   render() {
@@ -89,6 +95,7 @@ class Table extends Component {
                     baseURL={this.props.baseURL}
                     playlists={this.props.playlists}
                     updatePlaylists={this.props.updatePlaylists}
+                    hideOptionsCard={this.hideOptionsCard}
                   />
 
                   : null
