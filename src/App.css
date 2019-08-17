@@ -608,11 +608,44 @@ hr {
 .sidebarFooter {
   position: sticky;
   align-self: flex-end;
-  height: 80px;
+  height: 100px;
   width: 100%;
   box-sizing: border-box;
   border-top: 1px solid;
   border-color:rgba(230,230,230,0.1);
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0 20px;
+}
+
+.footerInstall {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footerInstall:hover {
+  color: white;
+}
+
+.install {
+  margin-left: 10px;
+
+}
+
+.user {
+  border-top: 1px solid;
+  box-sizing: border-box;
+  border-color: rgba(230,230,230,0.2);
+}
+
+.user:hover {
+  color: white;
+}
+
+.username {
+  margin-left: 7px;
 }
 
 .playlistHeaderContainer {
