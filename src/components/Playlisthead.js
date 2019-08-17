@@ -6,7 +6,7 @@ class Playlisthead extends Component {
     let dateString = new Date(Date.parse(this.props.playlist.created_at)).toDateString().substring(4,100)
 
     return(
-      <div className="albumHeaderContainer">
+      <div className="playlistHeaderContainer">
       <div className="headerMainInfo">
       <img
         className="topResultImg"
@@ -22,7 +22,7 @@ class Playlisthead extends Component {
            Created by <span>Victor</span>
          </h4>
          <h4>
-           {this.dateString} &#183; {this.props.playlist.tracks.length} songs
+           {dateString} &#183; {this.props.playlist.tracks.length} songs
          </h4>
        </div>
      </div>
