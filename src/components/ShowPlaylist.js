@@ -7,14 +7,28 @@ class ShowPlaylist extends Component {
     playlist: ''
   }
 
-  componentDidUpdate = () => {
-    console.log(this.props.currentPlaylist);
+  componentDidMount = () => {
+    console.log('updating showplaylist')
+
     fetch(this.props.baseURL + `/playlists/${this.props.currentPlaylist.id}`)
     .then(res => res.json())
     .then(playlist => this.setState({
       playlist: playlist
     }))
     .catch(err => console.log(err))
+  }
+
+  componentDidUpdate = () => {
+    if (this.props.currentPlaylist.playlist_name != this.state.playlist.playlist_name) {
+      console.log('updating showplaylist')
+
+      fetch(this.props.baseURL + `/playlists/${this.props.currentPlaylist.id}`)
+      .then(res => res.json())
+      .then(playlist => this.setState({
+        playlist: playlist
+      }))
+      .catch(err => console.log(err))
+    }
   }
 
   render() {
