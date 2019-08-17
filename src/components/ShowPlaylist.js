@@ -26,9 +26,11 @@ class ShowPlaylist extends Component {
       <>
         <Playlisthead
         playlist={this.state.playlist}
+        baseURL={this.props.baseURL}
         />
         <PlaylistBody
           playlist={this.state.playlist}
+          baseURL={this.props.baseURL}
         />
       </>
         :
