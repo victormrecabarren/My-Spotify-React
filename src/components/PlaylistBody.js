@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DeleteTrackCard from './DeleteTrackCard'
 
 class PlaylistBody extends Component {
 
@@ -87,16 +88,16 @@ class PlaylistBody extends Component {
                 {
                   this.state[track.name]=="clicked"
                   ?
-
-                  // <OptionsCard
-                  //   showInfo={this.props.showInfo}
-                  //   selected={track}
-                  //   baseURL={this.props.baseURL}
-                  //   playlists={this.props.playlists}
-                  //   updatePlaylists={this.props.updatePlaylists}
-                  //   hideOptionsCard={this.hideOptionsCard}
-                  // />
-                    null
+                  <div className="optionsCardContainer">
+                    <DeleteTrackCard
+                      showInfo={this.props.showInfo}
+                      selected={track}
+                      baseURL={this.props.baseURL}
+                      playlists={this.props.playlists}
+                      updatePlaylists={this.props.updatePlaylists}
+                      hideOptionsCard={this.hideOptionsCard}
+                    />
+                  </div>
                   : null
                 }
 
