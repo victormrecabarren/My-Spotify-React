@@ -5,6 +5,7 @@ class Playlisthead extends Component {
     editingPlaylistName: false,
     changeNameInput: '',
     playlistName: '',
+    deleteCardOpen: false,
   }
 
   handleChange = (event) => {
@@ -65,7 +66,7 @@ class Playlisthead extends Component {
            <form
              autoComplete="off"
              onSubmit={this.handleSubmit}
-             className="searchForm"
+             className="editPlaylistForm"
              onClick={() => {
                this.editPlaylistName(false)
              }}
@@ -98,6 +99,29 @@ class Playlisthead extends Component {
      </div>
      <div className="headerOptions">
       <button className="btn btn-success"><div>PLAY</div></button>
+      <div
+        className="deletePlaylistIcon"
+        onClick={() => {
+          this.setState({
+            deleteCardOpen: !this.state.deleteCardOpen
+          })
+        }}
+        >
+          &#183;&#183;&#183;
+        </div>
+        {
+          this.state.deleteCardOpen
+          ? <div
+              className="playlistOptionsCard"
+              onMouseLeave={() => {
+                this.setState({
+                  deleteCardOpen: false
+                })
+              }}
+            > <p>Delete playlist</p></div>
+          : null
+        }
+
     </div>
    </div>
 
