@@ -90,7 +90,7 @@ class Playlisthead extends Component {
                type="text"
                value={this.state.changeNameInput}
                onChange={this.handleChange}
-               placeholder="Change playlist name?"
+               placeholder={this.props.playlist.playlist_name}
              />
            </form>
            :
