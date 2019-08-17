@@ -26,6 +26,7 @@ class OptionsCard extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
+    this.props.selected.images = this.props.selected.images[0].url
 
 
     if (this.state.playlistInput) {
@@ -75,7 +76,7 @@ class OptionsCard extends Component {
   addToExistingPlaylist = (playlistId) => {
     this.props.selected.playlist_id = playlistId
 
-    this.props.selected.images = 'none'
+    this.props.selected.images = this.props.selected.images[0].url
 
     fetch(this.props.baseURL + '/playlists/' + playlistId + '/tracks', {
       method: 'POST',
