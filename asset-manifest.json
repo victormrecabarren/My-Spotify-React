@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/My-Spotify-React/static/css/main.f28a05f4.chunk.css",
-    "main.js": "/My-Spotify-React/static/js/main.fd004418.chunk.js",
-    "main.js.map": "/My-Spotify-React/static/js/main.fd004418.chunk.js.map",
+    "main.css": "/My-Spotify-React/static/css/main.b01233b2.chunk.css",
+    "main.js": "/My-Spotify-React/static/js/main.001e7b66.chunk.js",
+    "main.js.map": "/My-Spotify-React/static/js/main.001e7b66.chunk.js.map",
     "runtime~main.js": "/My-Spotify-React/static/js/runtime~main.fb7e9b4a.js",
     "runtime~main.js.map": "/My-Spotify-React/static/js/runtime~main.fb7e9b4a.js.map",
     "static/css/2.22a7d4ef.chunk.css": "/My-Spotify-React/static/css/2.22a7d4ef.chunk.css",
-    "static/js/2.a420e60e.chunk.js": "/My-Spotify-React/static/js/2.a420e60e.chunk.js",
-    "static/js/2.a420e60e.chunk.js.map": "/My-Spotify-React/static/js/2.a420e60e.chunk.js.map",
+    "static/js/2.7392f340.chunk.js": "/My-Spotify-React/static/js/2.7392f340.chunk.js",
+    "static/js/2.7392f340.chunk.js.map": "/My-Spotify-React/static/js/2.7392f340.chunk.js.map",
     "index.html": "/My-Spotify-React/index.html",
-    "precache-manifest.dc2fe1faa412f2b5e9bc8516243d80b2.js": "/My-Spotify-React/precache-manifest.dc2fe1faa412f2b5e9bc8516243d80b2.js",
+    "precache-manifest.1f7988a0cc08b58f42318c71380af56d.js": "/My-Spotify-React/precache-manifest.1f7988a0cc08b58f42318c71380af56d.js",
     "service-worker.js": "/My-Spotify-React/service-worker.js",
     "static/css/2.22a7d4ef.chunk.css.map": "/My-Spotify-React/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.f28a05f4.chunk.css.map": "/My-Spotify-React/static/css/main.f28a05f4.chunk.css.map"
+    "static/css/main.b01233b2.chunk.css.map": "/My-Spotify-React/static/css/main.b01233b2.chunk.css.map"
   }
 }
