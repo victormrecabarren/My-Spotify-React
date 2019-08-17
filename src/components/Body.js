@@ -86,6 +86,7 @@ class Body extends Component {
                 {...routeProps}
                 currentPlaylist={this.props.currentPlaylist}
                 baseURL={this.props.baseURL}
+                renamePlaylist={this.props.renamePlaylist}
               />
             )}
             />

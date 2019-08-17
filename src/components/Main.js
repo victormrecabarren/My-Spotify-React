@@ -83,6 +83,13 @@ class Main extends Component {
     })
   }
 
+  renamePlaylist = (updatedPlaylists, renamedPlaylist) => {
+    this.setState({
+      playlists: updatedPlaylists,
+      currentPlaylist: renamedPlaylist
+    })
+  }
+
 
 
   render(){
@@ -109,6 +116,7 @@ class Main extends Component {
           showInfo={this.state.showInfo}
           redirect={this.state.redirect}
           currentPlaylist={this.state.currentPlaylist}
+          renamePlaylist={this.renamePlaylist}
          />
       </div>
       </HashRouter>

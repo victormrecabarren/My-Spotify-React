@@ -7,7 +7,7 @@ class ShowPlaylist extends Component {
     playlist: ''
   }
 
-  componentDidMount = () => {
+  componentDidUpdate = () => {
     console.log(this.props.currentPlaylist);
     fetch(this.props.baseURL + `/playlists/${this.props.currentPlaylist.id}`)
     .then(res => res.json())
@@ -27,6 +27,7 @@ class ShowPlaylist extends Component {
         <Playlisthead
         playlist={this.state.playlist}
         baseURL={this.props.baseURL}
+        renamePlaylist={this.props.renamePlaylist}
         />
         <PlaylistBody
           playlist={this.state.playlist}

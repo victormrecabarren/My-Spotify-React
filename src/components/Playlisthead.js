@@ -17,6 +17,11 @@ class Playlisthead extends Component {
     event.preventDefault()
 
     if (this.state.changeNameInput) {
+      this.setState({
+        editingPlaylistName: false,
+        changeNameInput: '',
+      })
+
       fetch(this.props.baseURL + '/playlists/'+ this.props.playlist.id, {
         method: 'PUT',
         body: JSON.stringify(
@@ -27,14 +32,12 @@ class Playlisthead extends Component {
           }
         })
         .then(res => res.json())
-        .then(newName => this.setState({
-          changeNameInput: '',
-          editingPlaylistName: false,
-          playlistName: newName.playlist_name
-        }))
+        .then(updatedPlaylists => this.props.renamePlaylist(updatedPlaylists, updatedPlaylists[updatedPlaylists.length-1]))
         .catch(err=>console.log(err))
     }
   }
+
+
 
   editPlaylistName = (bool) => {
     this.setState({
@@ -82,7 +85,7 @@ class Playlisthead extends Component {
                this.editPlaylistName(true)
              }}
              >
-             {this.state.playlistName || this.props.playlist.playlist_name}
+             {this.props.playlist.playlist_name}
            </h1>
          }
          <h4>
