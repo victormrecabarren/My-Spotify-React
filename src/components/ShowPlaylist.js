@@ -42,6 +42,7 @@ class ShowPlaylist extends Component {
         playlist={this.state.playlist}
         baseURL={this.props.baseURL}
         renamePlaylist={this.props.renamePlaylist}
+        deleteOnePlaylist={this.props.deleteOnePlaylist}
         />
         <PlaylistBody
           playlist={this.state.playlist}

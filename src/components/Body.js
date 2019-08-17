@@ -87,6 +87,7 @@ class Body extends Component {
                 currentPlaylist={this.props.currentPlaylist}
                 baseURL={this.props.baseURL}
                 renamePlaylist={this.props.renamePlaylist}
+                deleteOnePlaylist={this.props.deleteOnePlaylist}
               />
             )}
             />

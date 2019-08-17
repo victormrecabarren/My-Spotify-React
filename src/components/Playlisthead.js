@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+
 
 class Playlisthead extends Component {
   state = {
@@ -38,12 +40,23 @@ class Playlisthead extends Component {
     }
   }
 
-
-
   editPlaylistName = (bool) => {
     this.setState({
       editingPlaylistName: bool,
     })
+  }
+
+  deletePlaylist = () => {
+    fetch(this.props.baseURL + '/playlists/'+ this.props.playlist.id, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+        }
+      })
+      .then(res=>res.json())
+      .then(newPlaylists=>this.props.deleteOnePlaylist(newPlaylists))
+      .catch(err=>console.log(err))
   }
 
 
@@ -111,14 +124,21 @@ class Playlisthead extends Component {
         </div>
         {
           this.state.deleteCardOpen
-          ? <div
+          ?
+          <Link to="/">
+          <div
               className="playlistOptionsCard"
               onMouseLeave={() => {
                 this.setState({
                   deleteCardOpen: false
                 })
               }}
-            > <p>Delete playlist</p></div>
+              onClick={() => {
+                this.deletePlaylist()
+              }}
+            > <p>Delete playlist</p>
+          </div>
+        </Link>
           : null
         }
 

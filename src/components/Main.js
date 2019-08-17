@@ -90,6 +90,17 @@ class Main extends Component {
     })
   }
 
+  deleteOnePlaylist = (updatedPlaylists) => {
+    this.setState({
+      playlists: updatedPlaylists,
+      currentPlaylist: '',
+      search: '',
+      searchResults: '',
+      showInfo: '',
+      redirect: false,
+    })
+  }
+
 
 
   render(){
@@ -117,6 +128,7 @@ class Main extends Component {
           redirect={this.state.redirect}
           currentPlaylist={this.state.currentPlaylist}
           renamePlaylist={this.renamePlaylist}
+          deleteOnePlaylist={this.deleteOnePlaylist}
          />
       </div>
       </HashRouter>
