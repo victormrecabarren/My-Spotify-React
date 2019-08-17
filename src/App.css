@@ -594,10 +594,15 @@ hr {
   font-weight: 300;
   font-size: 1em;
   margin: 5px 0;
+  display: block;
+  color: rgba(180, 180, 180, 1);
 }
+
 
 .myPlaylists:hover {
   color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .sidebarFooter {

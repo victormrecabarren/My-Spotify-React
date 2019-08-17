@@ -11,6 +11,7 @@ class Main extends Component {
     searchResults: '',
     showInfo: '',
     redirect: false,
+    currentPlaylist: '',
   }
 
   componentDidMount = () => {
@@ -73,6 +74,15 @@ class Main extends Component {
       .catch(err=>console.log(err))
   }
 
+  viewPlaylist = (playlist) => {
+    this.setState({
+      searchResults: '',
+      showInfo: '',
+      redirect: false,
+      currentPlaylist: playlist,
+    })
+  }
+
 
 
   render(){
@@ -83,6 +93,7 @@ class Main extends Component {
         <Sidebar
           playlists={this.state.playlists}
           clearSearchBar={this.clearSearchBar}
+          viewPlaylist={this.viewPlaylist}
          />
       </div>
       <div className="body">
@@ -97,6 +108,7 @@ class Main extends Component {
           searchResults={this.state.searchResults}
           showInfo={this.state.showInfo}
           redirect={this.state.redirect}
+          currentPlaylist={this.state.currentPlaylist}
          />
       </div>
       </HashRouter>

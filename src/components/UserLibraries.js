@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { HashRouter } from 'react-router-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+
 
 class UserLibraries extends Component {
   render() {
@@ -33,7 +35,13 @@ class UserLibraries extends Component {
         this.props.playlists.length
         ?
         this.props.playlists.map(playlist => (
-          <p className="myPlaylists">{playlist.playlist_name}</p>
+          <Link
+            to={`/playlist/${playlist.playlist_name}`}
+            className="myPlaylists"
+            onClick={() => {
+              this.props.viewPlaylist(playlist)
+            }}
+            >{playlist.playlist_name}</Link>
         ))
         : null
       }

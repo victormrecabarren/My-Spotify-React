@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 
 import Search from './Search'
 import ShowAlbum from './ShowAlbum'
+import ShowPlaylist from './ShowPlaylist'
 
 class Body extends Component {
   render() {
@@ -41,19 +42,19 @@ class Body extends Component {
       </div>
 
 
-          <Route
-            path="/"
-            exact
-            render={(routeProps) => (
-              <Search
-              {...routeProps}
-              baseURL={this.props.baseURL}
-              updateShowInfo={this.props.updateShowInfo}
-              searchResults={this.props.searchResults}
+        <Route
+          path="/"
+          exact
+          render={(routeProps) => (
+            <Search
+            {...routeProps}
+            baseURL={this.props.baseURL}
+            updateShowInfo={this.props.updateShowInfo}
+            searchResults={this.props.searchResults}
 
-                />
-              )}
-            />
+              />
+            )}
+          />
         <Route
           path="/showalbum"
           exact
@@ -69,8 +70,7 @@ class Body extends Component {
            )}
           />
         <Route
-          path="/showartist"
-          exact
+          exact path="/showartist"
           render={(routeProps) => (
             <ShowAlbum
               {...routeProps}
@@ -78,6 +78,16 @@ class Body extends Component {
              />
            )}
           />
+
+          <Route
+            strict path="/playlist/"
+            render={(routeProps) => (
+              <ShowPlaylist
+                {...routeProps}
+                currentPlaylist={this.props.currentPlaylist}
+              />
+            )}
+            />
 
 
 

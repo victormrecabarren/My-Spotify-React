@@ -15,6 +15,7 @@ class Sidebar extends Component {
      <div className="userLibraries">
     <UserLibraries
       playlists={this.props.playlists}
+      viewPlaylist={this.props.viewPlaylist}
      />
      </div>
      <div className="sidebarFooter">
