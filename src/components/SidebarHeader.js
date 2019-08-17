@@ -12,10 +12,10 @@ class SidebarHeader extends Component {
         className="sidebarOptions"
         >
         <Link
-          to="/">
-          <div
-            onClick={this.props.clearSearchBar}
-          > Browse</div>
+          to="/"
+          onClick={this.props.clearSearchBar}
+          >
+          Browse
         </Link>
       </div>
       <div

@@ -551,6 +551,20 @@ hr {
   padding: 0 20px;
 }
 
+.sidebarOptions:hover {
+  color: white;
+  text-decoration: none
+}
+
+ .sidebarOptions > a {
+  color: rgba(180, 180, 180, 1);
+}
+
+.sidebarOptions > a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .userLibraries {
   box-sizing: border-box;
   overflow-y: scroll;
@@ -580,6 +594,10 @@ hr {
   font-weight: 300;
   font-size: 1em;
   margin: 5px 0;
+}
+
+.myPlaylists:hover {
+  color: white;
 }
 
 .sidebarFooter {
