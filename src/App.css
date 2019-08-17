@@ -551,6 +551,12 @@ hr {
   padding: 0 20px;
 }
 
+.sidebarOptionsText {
+  padding-left: 15px;
+  font-size: 0.9em;
+  
+}
+
 .sidebarOptions:hover {
   color: white;
   text-decoration: none
